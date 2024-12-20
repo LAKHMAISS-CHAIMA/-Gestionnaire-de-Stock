@@ -64,3 +64,32 @@ class Inventory {
 }
 
 }
+
+const inven = new Inventory();
+let choix;
+do {
+      inven.menu();
+      choix = Number(prompt("entrz votre choix."));
+
+      switch (choix) {
+            case 1:
+                  inven.addProduct();
+                  break;
+            case 2:
+                  inven.listProducts();
+                  break;
+            case 3:
+                  inven.updateProduct();
+                  break;
+            case 4:
+                  inven.deleteProduct();
+                  break;
+            case 5:
+                  console.log("Au revoir!");
+                  break;
+            default:
+                  console.log("Choix invalide. Veuillez réessayer.");
+      }
+
+
+} while (choix != 5);
