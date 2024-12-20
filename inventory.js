@@ -47,4 +47,20 @@ class Inventory {
 
     console.log("Produit mis à jour avec succès !");
 }
+
+ //: Pour supprimer un produit.
+ deleteProduct() {
+    const id = Number(prompt("Entrez l'id du produit à suprimer: "));
+
+    if (id <=0 || id > dataproduit.length) {
+          console.log("Produit introuvable.");
+          return;
+    }
+    dataproduit.splice(id ,1);
+
+    fs.writeFileSync("data.json", JSON.stringify(dataproduit, null, 4));
+
+    console.log("Produit supprimé avec succès !");
+}
+
 }
