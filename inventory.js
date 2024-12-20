@@ -14,4 +14,13 @@ class Inventory {
 
           fs.writeFileSync("data.json", JSON.stringify(dataproduit, null, 4))
     }
+
+    //:Pour afficher tous les produits.
+    listProducts() {
+        if (dataproduit.length === 0) {
+              console.log("Aucun produit disponible.");
+        } else {
+              console.log(dataproduit);
+        }
+  }
 }
